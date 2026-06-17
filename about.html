@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Andy | Expert Private Tour Guide in Sri Lanka</title>
+    <meta name="description" content="Meet Andy, a certified National Tourist Guide Lecturer with over 10 years of experience. Discover his passion for sharing the hidden gems and rich history of Sri Lanka.">
+    
+    <!-- SEO & Social Meta Tags -->
+    <link rel="canonical" href="https://www.andysrilankatours.com/about.html" />
+    <meta property="og:title" content="About Andy | Expert Private Tour Guide in Sri Lanka" />
+    <meta property="og:description" content="Meet Andy, a certified National Tourist Guide Lecturer with over 10 years of experience. Discover his passion for sharing the hidden gems and rich history of Sri Lanka." />
+    <meta property="og:image" content="https://www.andysrilankatours.com/images/andy.jpeg" />
+    <meta property="og:url" content="https://www.andysrilankatours.com/about.html" />
+    <meta property="og:type" content="profile" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="About Andy | Sri Lanka Tour Guide" />
+    <meta name="twitter:description" content="Certified National Tourist Guide with over 10 years experience." />
+    <meta name="twitter:image" content="https://www.andysrilankatours.com/images/andy.jpeg" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Andy",
+      "jobTitle": "National Tourist Guide Lecturer",
+      "description": "Certified private tour guide in Sri Lanka with over 10 years of experience.",
+      "image": "https://www.andysrilankatours.com/images/andy.jpeg",
+      "url": "https://www.andysrilankatours.com/about.html",
+      "worksFor": {
+        "@type": "TravelAgency",
+        "name": "Andy's Sri Lanka Tours"
+      }
+    }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            primary: '#0ea5e9',
+                            secondary: '#10b981',
+                            light: '#f8fafc',
+                            accent: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .glass-nav {
+                @apply bg-white/80 backdrop-blur-md border-b border-white/20;
+            }
+            .review-slider-track {
+                display: flex;
+                width: max-content;
+            }
+            .review-card {
+                width: 350px;
+                flex-shrink: 0;
+            }
+            .no-scrollbar::-webkit-scrollbar {
+                display: none;
+            }
+            .no-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-slate-700 bg-brand-light antialiased pt-20">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-nav shadow-sm" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="font-sans text-2xl font-bold text-brand-dark tracking-tight">
+                        Andy<span class="text-brand-primary">Tours</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="index.html" class="text-slate-600 hover:text-brand-primary font-medium transition-colors" data-i18n="nav.home">Home</a>
+                    <a href="tours.html" class="text-slate-600 hover:text-brand-primary font-medium transition-colors" data-i18n="nav.tours">Tours</a>
+                    <a href="about.html" class="text-brand-primary font-medium transition-colors hover:text-brand-primary" data-i18n="nav.about">About Andy</a>
+                    <div class="flex items-center space-x-2 text-sm border-l border-slate-300 pl-4">
+                        <a href="#" class="lang-switch-btn font-bold text-brand-primary" data-lang="en">EN</a>
+                        <span class="text-slate-300">|</span>
+                        <a href="#" class="lang-switch-btn text-slate-500 hover:text-brand-primary" data-lang="zh">中文</a>
+                    </div>
+                    <a href="contact.html" class="bg-brand-primary text-white px-6 py-2 rounded-full font-medium hover:bg-sky-600 transition-all transform hover:-translate-y-0.5 shadow-md" data-i18n="nav.book">Book Now</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-dark focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-slate-50 rounded-md" data-i18n="nav.home">Home</a>
+                <a href="tours.html" class="block px-3 py-2 text-slate-600 font-medium hover:bg-slate-50 rounded-md" data-i18n="nav.tours">Tours</a>
+                <a href="about.html" class="block px-3 py-2 text-brand-primary font-medium bg-slate-50 rounded-md" data-i18n="nav.about">About Andy</a>
+                <a href="contact.html" class="block px-3 py-2 text-brand-primary font-medium hover:bg-slate-50 rounded-md" data-i18n="nav.book">Book Now</a>
+            </div>
+            <div class="px-3 py-2 flex space-x-3 border-t border-gray-100 mt-2 pt-2">
+                <a href="#" class="lang-switch-btn font-bold text-brand-primary" data-lang="en">EN</a>
+                <a href="#" class="lang-switch-btn text-slate-500" data-lang="zh">中文</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="bg-brand-dark text-white py-20 relative overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-20">
+            <img src="images/hero.png" alt="Background" class="w-full h-full object-cover">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl md:text-5xl font-sans font-bold mb-4" data-i18n="about.header.title">About Andy</h1>
+            <p class="text-lg text-slate-300 max-w-2xl mx-auto" data-i18n="about.header.desc" data-i18n="about.header.desc">Your dedicated guide to discovering the hidden gems and rich history of Sri Lanka.</p>
+        </div>
+    </div>
+
+    <!-- About Content -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row gap-16 items-center">
+                <div class="md:w-1/2 relative">
+                    <div class="absolute -inset-4 bg-brand-primary/10 rounded-3xl transform rotate-3"></div>
+                    <img src="images/andy.jpeg" alt="Andy Tour Guide" class="relative rounded-2xl shadow-2xl w-full" />
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-sans font-bold text-brand-dark mb-6" data-i18n="about.content.title" data-i18n="about.content.title">A Passionate Local Expert</h2>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed" data-i18n="about.content.p1">
+                        Born and raised in the heart of Sri Lanka, my connection to this land goes far beyond knowing the routes. I grew up listening to the ancient tales of kings, exploring the dense jungles, and understanding the rhythm of our vibrant culture.
+                    </p>
+                    <p class="text-lg text-slate-600 mb-6 leading-relaxed" data-i18n="about.content.p2">
+                        For over a decade, I have had the privilege of sharing the magic of Sri Lanka with travelers from all corners of the globe. Being a certified National Tourist Guide Lecturer, I combine deep historical knowledge with an adventurous spirit.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-8 mt-10">
+                        <div class="border-l-4 border-brand-primary pl-4">
+                            <h4 class="text-3xl font-bold text-brand-dark">10+</h4>
+                            <p class="text-slate-500 text-sm uppercase tracking-wider font-semibold" data-i18n="about.stats.exp" data-i18n="about.stats.exp">Years Experience</p>
+                        </div>
+                        <div class="border-l-4 border-brand-primary pl-4">
+                            <h4 class="text-3xl font-bold text-brand-dark">1000+</h4>
+                            <p class="text-slate-500 text-sm uppercase tracking-wider font-semibold" data-i18n="about.stats.happy" data-i18n="about.stats.happy">Happy Travelers</p>
+                        </div>
+                        <div class="border-l-4 border-brand-primary pl-4">
+                            <h4 class="text-3xl font-bold text-brand-dark">Certified</h4>
+                            <p class="text-slate-500 text-sm uppercase tracking-wider font-semibold" data-i18n="about.stats.cert" data-i18n="about.stats.cert">SLTDA Guide</p>
+                        </div>
+                        <div class="border-l-4 border-brand-primary pl-4">
+                            <h4 class="text-3xl font-bold text-brand-dark">5 Stars</h4>
+                            <p class="text-slate-500 text-sm uppercase tracking-wider font-semibold" data-i18n="about.stats.stars" data-i18n="about.stats.stars">TripAdvisor</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 bg-slate-50 p-6 rounded-2xl border border-slate-100 shadow-sm">
+                        <h3 class="text-xl font-bold text-brand-dark mb-4" data-i18n="contact.details.title">Contact Details</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center text-slate-600">
+                                <svg class="w-5 h-5 mr-3 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                                <a href="mailto:nphewage@hotmail.com" class="hover:text-brand-primary transition-colors font-medium">nphewage@hotmail.com</a>
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <svg class="w-5 h-5 mr-3 text-brand-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg>
+                                <span class="font-medium" data-i18n="contact.info.andy">Andy</span>
+                            </li>
+                            <li class="flex items-center text-slate-600">
+                                <svg class="w-5 h-5 mr-3 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+                                <a href="https://wa.me/94775414668" target="_blank" class="hover:text-brand-primary transition-colors font-medium">+94 77 541 4668 (WhatsApp)</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </sect    <!-- Customer Reviews Slider -->
+    <section class="py-24 bg-slate-50 text-slate-800 relative overflow-hidden mt-20">
+        <div class="absolute inset-0 opacity-5">
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs><pattern id="a" patternUnits="userSpaceOnUse" width="20" height="20"><circle cx="2" cy="2" r="2" fill="#0f172a"/></pattern></defs>
+                <rect width="100%" height="100%" fill="url(#a)"/>
+            </svg>
+        </div>
+        <div class="relative z-10 text-center mb-12 px-4">
+            <h4 class="text-brand-primary font-semibold tracking-wider uppercase mb-2">Testimonials</h4>
+            <h2 class="text-4xl font-sans font-bold text-brand-dark mb-6">What Our Travelers Say</h2>
+            <button class="open-review-modal bg-brand-primary hover:bg-brand-dark text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg">Leave a Review</button>
+        </div>
+        
+        <div class="relative z-10 w-full overflow-x-auto no-scrollbar review-slider-container cursor-grab active:cursor-grabbing">
+            <div class="review-slider-track gap-8 px-4 flex">
+                <!-- Reviews will be dynamically injected here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark border-t border-slate-800 text-slate-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="col-span-1 md:col-span-2">
+                <a href="index.html" class="font-sans text-2xl font-bold text-white tracking-tight mb-4 inline-block">
+                    Andy<span class="text-brand-primary">Tours</span>
+                </a>
+                <p class="mb-6 max-w-sm"><span data-i18n="footer.desc">Crafting bespoke, unforgettable journeys across the beautiful island of Sri Lanka.</span></p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4" data-i18n="footer.links">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-brand-primary transition-colors" data-i18n="nav.home">Home</a></li>
+                    <li><a href="tours.html" class="hover:text-brand-primary transition-colors" data-i18n="nav.tours">Tours</a></li>
+                    <li><a href="about.html" class="hover:text-brand-primary transition-colors" data-i18n="nav.about">About Andy</a></li>
+                    <li><a href="contact.html" class="hover:text-brand-primary transition-colors" data-i18n="footer.contact_link">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4" data-i18n="footer.contact">Contact Info</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> nphewage@hotmail.com</li>
+                    <li class="flex items-center"><svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg> +94 77 541 4668</li>
+                    <li class="flex items-center"><svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg> Andy</li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-slate-800 text-center text-sm">
+            <p data-i18n="footer.rights">&copy; 2026 Andy Tours Sri Lanka. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+    <!-- Review Modal -->
+    <div id="review-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden backdrop-blur-sm px-4">
+        <div class="bg-white rounded-2xl shadow-xl w-full max-w-lg overflow-hidden">
+            <div class="bg-brand-dark text-white p-6 relative">
+                <h3 class="text-2xl font-bold font-sans">Leave a Review</h3>
+                <button id="close-review-modal" class="absolute top-6 right-6 text-slate-300 hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+            </div>
+            <div class="p-8">
+                <form id="review-form" class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Your Name</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Country</label>
+                        <input type="text" name="country" required class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition-all">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Your Review</label>
+                        <textarea name="text" required rows="4" class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition-all resize-none"></textarea>
+                    </div>
+                    <button type="submit" id="submit-review-btn" class="w-full bg-brand-primary hover:bg-brand-dark text-white font-bold py-3 px-8 rounded-lg transition-colors">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/translations.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/reviews.js"></script>
+</body>
+</html>

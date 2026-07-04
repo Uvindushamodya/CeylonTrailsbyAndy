@@ -65,6 +65,10 @@ const translations = {
         "index.tours.tour6.price": "Inquire Now",
         
         "index.tours.viewall": "View All Packages",
+        "index.gallery.subtitle": "Travel Memories",
+        "index.gallery.title": "Moments with Our Guests",
+        "index.gallery.desc": "A glimpse into the unforgettable journeys and happy faces from our past tours.",
+
         "index.testi.text": "\"Traveling with Andy was the highlight of our trip. His knowledge of the local history and secret spots that aren't in the guidebooks made our Sri Lankan adventure truly exceptional.\"",
         "index.testi.name": "Sarah & Mike",
         "index.testi.loc": "United Kingdom",
@@ -223,6 +227,10 @@ const translations = {
         "index.tours.tour6.price": "立即咨询",
 
         "index.tours.viewall": "查看所有套餐",
+        "index.gallery.subtitle": "旅行回忆",
+        "index.gallery.title": "与客人的美好瞬间",
+        "index.gallery.desc": "回顾我们过去旅程中难忘的瞬间和幸福的笑脸。",
+
         "index.testi.text": "“与安迪一起旅行是我们这趟旅程的亮点。他对当地历史的了解以及指南上找不到的秘密地点，让我们的斯里兰卡冒险变得真正特别。”",
         "index.testi.name": "莎拉 & 迈克",
         "index.testi.loc": "英国",

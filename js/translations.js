@@ -159,7 +159,13 @@ const translations = {
         "contact.form.send": "Send Inquiry",
         "contact.info.colombo": "Colombo, Sri Lanka",
         "contact.info.andy": "Andy",
-        "contact.info.whatsapp": "Chat on WhatsApp"
+        "contact.info.whatsapp": "Chat on WhatsApp",
+        "contact.qr.title": "Connect on Social Media",
+        "contact.qr.desc": "Scan the QR codes below to add Andy on your preferred platform.",
+        "contact.qr.kwai": "Scan to Connect on Kwai",
+        "contact.qr.line": "Add on LINE",
+        "contact.qr.instagram": "Follow on Instagram",
+
     },
     zh: {
         // Navigation
@@ -321,6 +327,12 @@ const translations = {
         "contact.form.send": "发送询盘",
         "contact.info.colombo": "斯里兰卡，科伦坡",
         "contact.info.andy": "安迪",
-        "contact.info.whatsapp": "在 WhatsApp 上聊天"
+        "contact.info.whatsapp": "在 WhatsApp 上聊天",
+        "contact.qr.title": "在社交媒体上联系",
+        "contact.qr.desc": "扫描下方二维码，在您偏好的平台上添加安迪。",
+        "contact.qr.kwai": "扫码在快手上联系",
+        "contact.qr.line": "在LINE上添加",
+        "contact.qr.instagram": "在Instagram上关注",
+
     }
 };

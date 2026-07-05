@@ -1,50 +1,64 @@
-const API_BASE_URL = (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') && window.location.port !== '5000'
-    ? 'http://127.0.0.1:5000'
-    : '';
+// Replace this URL with your actual Google Apps Script Web App URL after deployment
+const API_BASE_URL = 'https://script.google.com/macros/s/AKfycbyVB3O9B-yKMPjmQDCyOXas08J1YWEpoajfxRuvw5_Vt8NGstVctH3oaWAWHKdEuuU7/exec';
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchReviews();
     setupReviewModal();
 });
 
+// Helper functions for dynamic UI
+const colors = ['bg-brand-primary', 'bg-emerald-500', 'bg-amber-500', 'bg-rose-500', 'bg-indigo-500', 'bg-purple-500'];
+
+function getInitials(name) {
+    if (!name) return 'A';
+    const parts = name.trim().split(' ');
+    if (parts.length === 1) return parts[0].charAt(0).toUpperCase();
+    return (parts[0].charAt(0) + parts[parts.length - 1].charAt(0)).toUpperCase();
+}
+
+function getColor(name) {
+    if (!name) return colors[0];
+    let hash = 0;
+    for (let i = 0; i < name.length; i++) {
+        hash = name.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const index = Math.abs(hash) % colors.length;
+    return colors[index];
+}
+
 async function fetchReviews() {
     try {
-        const response = await fetch(`${API_BASE_URL}/api/reviews`);
-        if (!response.ok) throw new Error('Failed to fetch reviews');
-        
-        let reviews = await response.json();
-        
-        // If API returns nothing, maybe we should show mock reviews or just nothing
-        if (!reviews || reviews.length === 0) {
-            reviews = [
-                {
-                    name: "Sarah & Mike", country: "United Kingdom",
-                    text: "Traveling with Andy was the highlight of our trip. His knowledge of the local history and secret spots made our adventure truly exceptional.",
-                    initials: "SM", color: "bg-brand-primary"
-                },
-                {
-                    name: "James Doe", country: "Australia",
-                    text: "We saw 3 leopards in Yala thanks to Andy's eagle eyes! He arranged everything perfectly and we just had to sit back and enjoy.",
-                    initials: "JD", color: "bg-emerald-500"
-                },
-                {
-                    name: "Anna Lindström", country: "Sweden",
-                    text: "The train ride to Ella was magical. Andy took care of our tickets months in advance. Best guide we've ever had on any of our travels!",
-                    initials: "AL", color: "bg-amber-500"
-                },
-                {
-                    name: "Paul Thompson", country: "Canada",
-                    text: "Our family of 5 had an incredible time. Andy was so patient with the kids and customized everything to our pace. Highly recommended.",
-                    initials: "PT", color: "bg-rose-500"
-                }
-            ];
+        // If it's the placeholder, load some mocks to avoid breaking the UI
+        if (API_BASE_URL.includes('PLACEHOLDER_SCRIPT_ID')) {
+            console.log("Using mock reviews (API_BASE_URL not configured).");
+            renderReviews(getMockReviews());
+            return;
         }
 
-        renderReviews(reviews);
+        const response = await fetch(API_BASE_URL);
+        if (!response.ok) throw new Error('Failed to fetch reviews');
+        
+        const reviews = await response.json();
+        
+        if (!reviews || reviews.length === 0) {
+            renderReviews(getMockReviews());
+        } else {
+            renderReviews(reviews);
+        }
     } catch (error) {
         console.error('Error loading reviews:', error);
-        // On error, we could render fallback mock reviews here too
+        renderReviews(getMockReviews()); // Fallback on error
     }
+}
+
+function getMockReviews() {
+    return [
+        { name: "Sarah & Mike", country: "United Kingdom", text: "Traveling with Andy was the highlight of our trip. His knowledge of the local history and secret spots made our adventure truly exceptional." },
+        { name: "James Doe", country: "Australia", text: "We saw 3 leopards in Yala thanks to Andy's eagle eyes! He arranged everything perfectly and we just had to sit back and enjoy." },
+        { name: "Anna Lindström", country: "Sweden", text: "The train ride to Ella was magical. Andy took care of our tickets months in advance. Best guide we've ever had on any of our travels!" },
+        { name: "Paul Thompson", country: "Canada", text: "Our family of 5 had an incredible time. Andy was so patient with the kids and customized everything to our pace. Highly recommended." },
+        { name: "Tour Group CHN251", country: "China", text: "Excellent service! The guide was highly praised for being extremely patient and attentive. We were very satisfied with the meals. The vehicle was comfortable, clean, and tidy, and the flower welcome ceremony was a beautiful touch." }
+    ];
 }
 
 function renderReviews(reviews) {
@@ -53,17 +67,20 @@ function renderReviews(reviews) {
     containers.forEach(track => {
         track.innerHTML = ''; // Clear existing
         
-        // We need to render the original set, and then duplicate it for the infinite slider
-        const allReviews = [...reviews, ...reviews];
+        // Render the exact number of reviews without duplicating
+        const allReviews = [...reviews];
         
         allReviews.forEach(review => {
+            const initials = getInitials(review.name);
+            const color = getColor(review.name);
+
             const card = document.createElement('div');
             card.className = 'review-card flex flex-col bg-white shadow-lg p-8 rounded-2xl border border-slate-100 min-w-[320px] max-w-[400px] shrink-0';
             
             card.innerHTML = `
                 <p class="text-slate-600 italic mb-8 flex-grow">"${review.text}"</p>
                 <div class="flex items-center space-x-4 mt-auto">
-                    <div class="w-12 h-12 ${review.color || 'bg-brand-primary'} text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">${review.initials || 'A'}</div>
+                    <div class="w-12 h-12 ${color} text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">${initials}</div>
                     <div>
                         <h5 class="font-bold text-brand-dark">${review.name}</h5>
                         <p class="text-slate-500 text-sm">${review.country}</p>
@@ -120,21 +137,28 @@ function setupReviewModal() {
         };
 
         try {
-            const response = await fetch(`${API_BASE_URL}/api/reviews`, {
+            if (API_BASE_URL.includes('PLACEHOLDER_SCRIPT_ID')) {
+                alert('Success! (Mock mode - script URL not configured)');
+                form.reset();
+                modal.classList.add('hidden');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Review';
+                return;
+            }
+
+            // Using text/plain prevents CORS preflight OPTIONS request
+            const response = await fetch(API_BASE_URL, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'text/plain;charset=utf-8' },
                 body: JSON.stringify(data)
             });
 
             if (response.ok) {
                 form.reset();
                 modal.classList.add('hidden');
-                // Refresh reviews
-                await fetchReviews();
-                alert('Thank you for your review!');
+                alert('Thank you for your review! It will appear on the site once approved by Andy.');
             } else {
-                const resData = await response.json();
-                alert(resData.error || 'Failed to submit review. Please try again.');
+                alert('Failed to submit review. Please try again.');
             }
         } catch (error) {
             console.error('Error submitting review:', error);

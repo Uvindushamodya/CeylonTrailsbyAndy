@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.andysrilankatours.com/sitemap.xml
+Sitemap: https://www.discoverceylonbyandy.com/sitemap.xml

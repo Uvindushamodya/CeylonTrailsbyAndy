@@ -132,6 +132,15 @@ const translations = {
         "about.stats.cert": "SLTDA Guide",
         "about.stats.stars": "TripAdvisor",
 
+        // Testimonials
+        "about.testi.subtitle": "Testimonials",
+        "about.testi.title": "What Our Travelers Say",
+        "about.testi.leave_review": "Leave a Review",
+        "about.testi.name": "Your Name",
+        "about.testi.country": "Country",
+        "about.testi.review": "Your Review",
+        "about.testi.submit": "Submit Review",
+
         // Contact
         "contact.header.title": "Let's Plan Your Trip",
         "contact.header.desc": "Get in touch to customize your itinerary or book one of our popular packages.",
@@ -299,6 +308,15 @@ const translations = {
         "about.stats.happy": "满意的游客",
         "about.stats.cert": "SLTDA 向导",
         "about.stats.stars": "猫途鹰",
+
+        // Testimonials
+        "about.testi.subtitle": "真实口碑",
+        "about.testi.title": "旅客心声",
+        "about.testi.leave_review": "分享您的体验",
+        "about.testi.name": "您的姓名",
+        "about.testi.country": "国家/地区",
+        "about.testi.review": "您的评价",
+        "about.testi.submit": "提交评价",
 
         // Contact
         "contact.header.title": "让我们计划您的行程",

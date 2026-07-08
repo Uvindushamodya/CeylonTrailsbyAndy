@@ -1,5 +1,4 @@
-// Replace this URL with your actual Google Apps Script Web App URL after deployment
-const API_BASE_URL = 'https://script.google.com/macros/s/AKfycbyVB3O9B-yKMPjmQDCyOXas08J1YWEpoajfxRuvw5_Vt8NGstVctH3oaWAWHKdEuuU7/exec';
+const API_BASE_URL = 'https://script.google.com/macros/s/AKfycbzwA0yWUEniGtTR3A29sx9Ph9OLZHl4QkIhm_WdASCsMIafWUHwtgkTi_1esjNSNaUD/exec';
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchReviews();
@@ -156,7 +155,8 @@ function setupReviewModal() {
             if (response.ok) {
                 form.reset();
                 modal.classList.add('hidden');
-                alert('Thank you for your review! It will appear on the site once approved by Andy.');
+                alert('Thank you for your review!');
+                fetchReviews(); // Instantly update the reviews on the website
             } else {
                 alert('Failed to submit review. Please try again.');
             }

@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://script.google.com/macros/s/AKfycbxZNvw-5xJ4vUQ9TJkDPXQatDkLgwjT9334b8a5aflp1oyBcNADD74h4w_RiO26omA/exec';
+const API_BASE_URL = 'https://script.google.com/macros/s/AKfycbzz5GryK4hU4JVbqfgFYA19VHqvjGvihxTNI22IuB7BBwhLUeDSB4HvoJKIq0R0Ydj5/exec';
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchReviews();

@@ -6,13 +6,13 @@ base_dir = 'd:/Andy/CeylonTrailsbyAndy/'
 
 ga4_script = """
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MGP9RHNB6M"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-XXXXXXXXXX');
+      gtag('config', 'G-MGP9RHNB6M');
     </script>
 </head>"""
 
@@ -27,7 +27,7 @@ for file in html_files:
     content = content.replace('andysrilankatours.com', 'discoverceylonbyandy.com')
     
     # 2. GA4 insert (before </head>)
-    if 'G-XXXXXXXXXX' not in content:
+    if 'G-MGP9RHNB6M' not in content:
         content = content.replace('</head>', ga4_script)
     
     # 3. GSC insert (only in index.html)

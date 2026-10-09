@@ -69,8 +69,14 @@ function renderReviews(reviews) {
     containers.forEach(track => {
         track.innerHTML = ''; // Clear existing
         
-        // Render the exact number of reviews without duplicating
-        const allReviews = [...reviews];
+        // Create a base set of reviews that is large enough
+        let baseReviews = [...reviews];
+        while (baseReviews.length < 5) {
+            baseReviews = [...baseReviews, ...reviews];
+        }
+        
+        // Render 3 identical sets for a seamless bidirectional infinite loop
+        const allReviews = [...baseReviews, ...baseReviews, ...baseReviews];
         
         allReviews.forEach((review, index) => {
             const initials = getInitials(review.name);

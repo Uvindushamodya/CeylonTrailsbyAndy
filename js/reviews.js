@@ -60,7 +60,10 @@ function getMockReviews() {
     ];
 }
 
+let currentlyExpandedCard = null;
+
 function renderReviews(reviews) {
+    currentlyExpandedCard = null;
     const containers = document.querySelectorAll('.review-slider-track');
     
     containers.forEach(track => {
@@ -69,16 +72,21 @@ function renderReviews(reviews) {
         // Render the exact number of reviews without duplicating
         const allReviews = [...reviews];
         
-        allReviews.forEach(review => {
+        allReviews.forEach((review, index) => {
             const initials = getInitials(review.name);
             const color = getColor(review.name);
 
             const card = document.createElement('div');
-            card.className = 'review-card flex flex-col bg-white shadow-lg p-8 rounded-2xl border border-slate-100 min-w-[320px] max-w-[400px] shrink-0';
+            card.dataset.index = index;
+            card.className = 'review-card flex flex-col bg-white shadow-lg p-8 rounded-2xl border border-slate-100 min-w-[320px] max-w-[400px] shrink-0 min-h-[550px] transition-all duration-700 ease-in-out relative overflow-hidden';
+            card.style.maxHeight = '550px';
             
             card.innerHTML = `
-                <p class="text-slate-600 italic mb-8 flex-grow">"${review.text}"</p>
-                <div class="flex items-center space-x-4 mt-auto">
+                <div class="flex-grow flex flex-col justify-start relative">
+                    <p class="review-text-content text-slate-600 italic transition-all duration-500" style="display: -webkit-box; -webkit-line-clamp: 15; -webkit-box-orient: vertical; overflow: hidden;">"${review.text}"</p>
+                    <button class="read-more-btn text-brand-primary text-sm font-semibold mt-4 text-left hidden focus:outline-none transition-colors hover:text-brand-accent w-max">Read More</button>
+                </div>
+                <div class="flex items-center space-x-4 mt-8 mt-auto">
                     <div class="w-12 h-12 ${color} text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">${initials}</div>
                     <div>
                         <h5 class="font-bold text-brand-dark">${review.name}</h5>
@@ -87,6 +95,48 @@ function renderReviews(reviews) {
                 </div>
             `;
             track.appendChild(card);
+
+            // Need to check overflow after layout is calculated
+            requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                    const textContent = card.querySelector('.review-text-content');
+                    const readMoreBtn = card.querySelector('.read-more-btn');
+                    
+                    if (textContent.scrollHeight > textContent.clientHeight) {
+                        readMoreBtn.classList.remove('hidden');
+                    }
+
+                    readMoreBtn.addEventListener('click', () => {
+                        const isExpanded = card.style.maxHeight === '3000px';
+
+                        if (!isExpanded) {
+                            // Collapse previously expanded card
+                            if (currentlyExpandedCard && currentlyExpandedCard !== card) {
+                                const prevBtn = currentlyExpandedCard.querySelector('.read-more-btn');
+                                const prevContent = currentlyExpandedCard.querySelector('.review-text-content');
+                                
+                                currentlyExpandedCard.style.maxHeight = '550px';
+                                prevContent.style.webkitLineClamp = '15';
+                                prevBtn.textContent = 'Read More';
+                            }
+
+                            // Expand this card
+                            card.style.maxHeight = '3000px';
+                            textContent.style.webkitLineClamp = 'unset';
+                            readMoreBtn.textContent = 'Show Less';
+                            currentlyExpandedCard = card;
+                        } else {
+                            // Collapse this card
+                            card.style.maxHeight = '550px';
+                            textContent.style.webkitLineClamp = '15';
+                            readMoreBtn.textContent = 'Read More';
+                            if (currentlyExpandedCard === card) {
+                                currentlyExpandedCard = null;
+                            }
+                        }
+                    });
+                });
+            });
         });
     });
 
